@@ -1,3 +1,4 @@
+
 // COS30008, Tutorial 7, 2023
 
 #pragma once
@@ -13,11 +14,11 @@ class BaseSorter
 private:
     T* fCollection;
     size_t fSize;
-    size_t fSwapCount;
-
+	size_t fSwapCount;
+ 	
 public:
-
-    BaseSorter(T* aCollection = nullptr, size_t aSize = 0) :
+    
+    BaseSorter(T* aCollection = nullptr, size_t aSize = 0):
         fCollection(new T[aSize]),
         fSize(aSize),
         fSwapCount(0)
@@ -32,7 +33,7 @@ public:
     {
         delete[] fCollection;
     }
-
+    
     size_t size() const noexcept
     {
         return fSize;
@@ -58,13 +59,13 @@ public:
 
         fSwapCount++;
     }
-
+    
     template<typename C = std::greater<T>>
-    void operator()(bool aPrintStage = true, C aIsOutOfOrder = C{}) noexcept
+    void operator()( bool aPrintStage = true, C aIsOutOfOrder = C{} ) noexcept
     {
         // intentionally empty
     }
-
+    
     void printStage(size_t aIndent = 0) const noexcept
     {
         while (aIndent--)
@@ -73,10 +74,9 @@ public:
         }
 
         std::cout << "[";
-
         if (fSize > 0)
         {
-            for (size_t i = 0;; )
+            for (size_t i = 0;;)
             {
                 std::cout << fCollection[i++];
 
@@ -85,8 +85,9 @@ public:
                     break;
                 }
 
-                std::cout << ",";
+                std::cout << ", ";
             }
+
         }
 
         std::cout << "]" << std::endl;
