@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,15 +128,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BaseSorter.cpp" />
-    <ClCompile Include="BubbleSorter.cpp" />
-    <ClCompile Include="FisherAndYatesSorter.cpp" />
-    <ClCompile Include="Main.cpp" />
+    <ClInclude Include="BaseSorter.h" />
+    <ClInclude Include="BaseSorterSolutions" />
+    <ClInclude Include="BubbleSorter.h" />
+    <ClInclude Include="BubbleSorterSolutions" />
+    <ClInclude Include="FisherAndYatesSorter.h" />
+    <ClInclude Include="FisherAndYatesSorterSolutions" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseSorter.h" />
-    <ClInclude Include="BubbleSorter.h" />
-    <ClInclude Include="FisherAndYatesSorter.h" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
